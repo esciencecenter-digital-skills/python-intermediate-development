@@ -535,7 +535,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>1.7 Optional Exercises</h1>
-        <p>Last updated on 2025-10-20 |
+        <p>Last updated on 2025-10-24 |
 
         <a href="https://github.com/carpentries-incubator/python-intermediate-development/edit/main/episodes/17-section1-optional-exercises.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -671,20 +671,22 @@ is <a href="https://github.com/conda-forge/miniforge" class="external-link">mini
 </div>
 </div>
 </div>
-<div id="exercise-customise-pylint" class="callout challenge">
+<div id="exercise-customise-ruff" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <span class="callout-header">Challenge</span>
-<div id="exercise-customise-pylint" class="callout-inner">
-<h3 class="callout-title">Exercise: Customise <code>pylint</code>
+<div id="exercise-customise-ruff" class="callout-inner">
+<h3 class="callout-title">Exercise: Customise <code>ruff</code>
 </h3>
 <div class="callout-content">
-<p>Tell <code>pylint</code> to accept the maximum line length of 100
-characters instead of the default 80.</p>
-<p>Hint: find out different ways in which you can configure
-<code>pylint</code> (e.g. via <code>pylint</code> command line interface
-or its configuration file).</p>
+<p>Tell Ruff to accept the maximum line length of 100 characters instead
+of the default 79.</p>
+<p>Find out different ways in which you can configure <code>ruff</code>
+(e.g. via <code>ruff</code> command line interface or the project
+configuration file (<code>pyproject.toml</code>)).</p>
+<p>Hint: Note that the maximum line lenght will only be enforced if a
+rule on long-line violations (such as <code>E501</code>) is enabled.</p>
 </div>
 </div>
 </div>
@@ -696,17 +698,26 @@ or its configuration file).</p>
 <div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="section level3">
-<h3 id="by-passing-an-argument-to-pylint-in-the-command-line">By passing an argument to <code>pylint</code> in the command
-line<a class="anchor" aria-label="anchor" href="#by-passing-an-argument-to-pylint-in-the-command-line"></a></h3>
-<p>Specify the max line length as an argument:
-<code>pylint --max-line-length=100</code></p>
+<h3 id="by-passing-an-argument-to-ruff-in-the-command-line">By passing an argument to Ruff in the command line<a class="anchor" aria-label="anchor" href="#by-passing-an-argument-to-ruff-in-the-command-line"></a></h3>
+<p>Specify the max line length as an argument, including all
+<code>E</code> rules:
+<code>ruff check --select E --line-length=100</code></p>
 </div>
 <div class="section level3">
 <h3 id="using-a-configuration-file">Using a configuration file<a class="anchor" aria-label="anchor" href="#using-a-configuration-file"></a></h3>
-<p>You can create a file <code>.pylintrc</code> in the root of your
-project folder to overwrite <code>pylint</code> settings:</p>
-<pre><code>[FORMAT]
-max-line-length=100</code></pre>
+<p>You can add a section to the <code>pyproject.toml</code> in the root
+of your project folder to overwrite Ruff settings:</p>
+<pre><code>...
+[tool.ruff.lint]
+select = [
+    ...
+    "E",
+    ...
+]
+
+[tool.ruff]
+line-length = 100
+...</code></pre>
 </div>
 </div>
 </div>
@@ -773,8 +784,8 @@ max-line-length=100</code></pre>
   "url": "https://carpentries-incubator.github.io/python-intermediate-development/17-section1-optional-exercises.html",
   "identifier": "https://carpentries-incubator.github.io/python-intermediate-development/17-section1-optional-exercises.html",
   "dateCreated": "2020-04-23",
-  "dateModified": "2025-10-20",
-  "datePublished": "2025-10-23"
+  "dateModified": "2025-10-24",
+  "datePublished": "2025-10-24"
 }
 
   </script><script>

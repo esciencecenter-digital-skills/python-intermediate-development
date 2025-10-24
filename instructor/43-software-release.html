@@ -544,7 +544,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>4.3 Packaging Code for Release and Distribution</h1>
-        <p>Last updated on 2025-06-19 |
+        <p>Last updated on 2025-10-24 |
 
         <a href="https://github.com/carpentries-incubator/python-intermediate-development/edit/main/episodes/43-software-release.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -749,7 +749,7 @@ for our code to run, like NumPy. Development dependencies are
 dependencies which are an essential part of your development process for
 a project, but are not required to run it. Common examples of
 developments dependencies are linters and test frameworks, like
-<code>pylint</code> or <code>pytest</code>.</p>
+<code>ruff</code> or <code>pytest</code>.</p>
 <p>When we add a dependency using Poetry, Poetry will add it to the list
 of dependencies in the <code>pyproject.toml</code> file, add a reference
 to it in a new <code>poetry.lock</code> file, and automatically install
@@ -764,7 +764,7 @@ distinguish between runtime and development dependencies.</p>
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="ex">$</span> poetry add matplotlib numpy</span>
-<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a><span class="ex">$</span> poetry add <span class="at">--group</span> dev pylint</span>
+<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a><span class="ex">$</span> poetry add <span class="at">--group</span> dev ruff</span>
 <span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a><span class="ex">$</span> poetry install</span></code></pre>
 </div>
 <p>These two sets of dependencies will be used in different
@@ -954,8 +954,8 @@ to start using it.</li>
   "url": "https://carpentries-incubator.github.io/python-intermediate-development/instructor/43-software-release.html",
   "identifier": "https://carpentries-incubator.github.io/python-intermediate-development/instructor/43-software-release.html",
   "dateCreated": "2020-04-23",
-  "dateModified": "2025-06-19",
-  "datePublished": "2025-10-23"
+  "dateModified": "2025-10-24",
+  "datePublished": "2025-10-24"
 }
 
   </script><script>

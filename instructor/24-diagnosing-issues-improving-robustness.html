@@ -548,7 +548,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>2.4 Diagnosing Issues and Improving Robustness</h1>
-        <p>Last updated on 2025-10-20 |
+        <p>Last updated on 2025-10-24 |
 
         <a href="https://github.com/carpentries-incubator/python-intermediate-development/edit/main/episodes/24-diagnosing-issues-improving-robustness.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -760,7 +760,7 @@ command line.</p>
 </button>
 </div>
 </nav><div id="nav-tabContent-1" class="tab-content">
-<div id="nav-tabpanel-1-PyCharm" class="tab-pane show active" aria-labelledby="nav-tab-1-PyCharm" role="tabpanel">
+<div id="nav-tabpanel-1-PyCharm" class="tab-pane show active" role="tabpanel" aria-labelledby="nav-tab-1-PyCharm">
 <p>If you have not done so already, you will first need to enable the
 Pytest framework in PyCharm. You can do this by:</p>
 <ol style="list-style-type: decimal"><li>Select either <code>PyCharm</code> &gt; <code>Preferences</code>
@@ -771,7 +771,7 @@ Pytest framework in PyCharm. You can do this by:</p>
 select <code>pytest</code>.</li>
 <li>Select <code>OK</code>.</li>
 </ol><figure><img src="../fig/pycharm-test-framework.png" class="image-with-shadow figure mx-auto d-block" alt="Setting up test framework in PyCharm" width="1000"></figure></div>
-<div id="nav-tabpanel-1-VSCode" class="tab-pane" aria-labelledby="nav-tab-1-VSCode" role="tabpanel">
+<div id="nav-tabpanel-1-VSCode" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-1-VSCode">
 <p>If you have not done so already, you will first need to configure the
 Pytest framework in VS Code. Open the Test Explorer view (click on the
 test beaker icon on the VS Code Activity Bar on the left hand side).</p>
@@ -810,7 +810,7 @@ before.</p>
 </button>
 </div>
 </nav><div id="nav-tabContent-2" class="tab-content">
-<div id="nav-tabpanel-2-PyCharm" class="tab-pane show active" aria-labelledby="nav-tab-2-PyCharm" role="tabpanel">
+<div id="nav-tabpanel-2-PyCharm" class="tab-pane show active" role="tabpanel" aria-labelledby="nav-tab-2-PyCharm">
 <p>Right-click the <code>test_models.py</code> file under the
 <code>tests</code> directory in the file navigation window on the left,
 and select <code>Run 'pytest in test_model...'</code>. You’ll see the
@@ -855,7 +855,7 @@ test:</p>
 PyCharm runs just that test function, and we see the same
 <code>AssertionError</code> that we saw before.</p>
 </div>
-<div id="nav-tabpanel-2-VSCode" class="tab-pane" aria-labelledby="nav-tab-2-VSCode" role="tabpanel">
+<div id="nav-tabpanel-2-VSCode" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-2-VSCode">
 <p>In VS Code - one you have configured the test framework to use - you
 can run tests either from the Project Explorer or Test Explorer in the
 VS Code Activity Bar.</p>
@@ -903,7 +903,7 @@ indicating that you have placed a breakpoint on that line.</p>
 </button>
 </div>
 </nav><div id="nav-tabContent-3" class="tab-content">
-<div id="nav-tabpanel-3-PyCharm" class="tab-pane show active" aria-labelledby="nav-tab-3-PyCharm" role="tabpanel">
+<div id="nav-tabpanel-3-PyCharm" class="tab-pane show active" role="tabpanel" aria-labelledby="nav-tab-3-PyCharm">
 <figure><img src="../fig/pytest-pycharm-set-breakpoint.png" class="image-with-shadow figure mx-auto d-block" alt="Setting a breakpoint in PyCharm" width="600"></figure><p>Now if you select the green arrow next to the
 <code>test_patient_normalise</code> function and instead select
 <code>Debug 'pytest in test_model...'</code>, you will notice that
@@ -933,7 +933,7 @@ expression <code>max[:, np.newaxis]</code> into the console, and you
 will be able to see the column vector that we are dividing
 <code>data</code> by in the return line of the function.</p>
 <figure><img src="../fig/pytest-pycharm-console.png" class="image-with-shadow figure mx-auto d-block" alt="Debugging in PyCharm" width="1000"></figure></div>
-<div id="nav-tabpanel-3-VSCode" class="tab-pane" aria-labelledby="nav-tab-3-VSCode" role="tabpanel">
+<div id="nav-tabpanel-3-VSCode" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-3-VSCode">
 <figure><img src="../fig/vscode-set-breakpoint.png" class="image-with-shadow figure mx-auto d-block" alt="Setting a breakpoint in VS Code" width="600"></figure><p>Now if you select the <code>test_patient_normalise</code> function in
 the Test Explorer and instead select <code>Debug Test</code> option, you
 will notice that execution will be paused at the <code>return</code>
@@ -980,11 +980,11 @@ we have our answer, stop the debugging process.</p>
 </button>
 </div>
 </nav><div id="nav-tabContent-4" class="tab-content">
-<div id="nav-tabpanel-4-PyCharm" class="tab-pane show active" aria-labelledby="nav-tab-4-PyCharm" role="tabpanel">
+<div id="nav-tabpanel-4-PyCharm" class="tab-pane show active" role="tabpanel" aria-labelledby="nav-tab-4-PyCharm">
 <p>In PyCharm you can stop debugging by selecting the red square at the
 top right of the main PyCharm window.</p>
 </div>
-<div id="nav-tabpanel-4-VSCode" class="tab-pane" aria-labelledby="nav-tab-4-VSCode" role="tabpanel">
+<div id="nav-tabpanel-4-VSCode" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-4-VSCode">
 <p>In VS Code you can stop debugging by selecting
 <code>Run -&gt; Stop Debugging</code> from the top menu, or by selecting
 the red cross at the top of the code editing pane.</p>
@@ -1009,9 +1009,9 @@ the tests again should result in all tests passing.</p>
 </button>
 </div>
 </nav><div id="nav-tabContent-5" class="tab-content">
-<div id="nav-tabpanel-5-PyCharm" class="tab-pane show active" aria-labelledby="nav-tab-5-PyCharm" role="tabpanel">
+<div id="nav-tabpanel-5-PyCharm" class="tab-pane show active" role="tabpanel" aria-labelledby="nav-tab-5-PyCharm">
 <figure><img src="../fig/pytest-pycharm-all-tests-pass.png" class="image-with-shadow figure mx-auto d-block" alt="All tests in PyCharm are successful" width="1000"></figure></div>
-<div id="nav-tabpanel-5-VSCode" class="tab-pane" aria-labelledby="nav-tab-5-VSCode" role="tabpanel">
+<div id="nav-tabpanel-5-VSCode" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-5-VSCode">
 <figure><img src="../fig/vscode-all-tests-pass.png" class="image-with-shadow figure mx-auto d-block" alt="All tests in VS Code are successful" width="1000"></figure></div>
 </div>
 </div>
@@ -1275,7 +1275,7 @@ inappropriate value.</p>
 <span id="cb10-18"><a href="#cb10-18" tabindex="-1"></a>    ])</span>
 <span id="cb10-19"><a href="#cb10-19" tabindex="-1"></a><span class="kw">def</span> test_patient_normalise(test, expected, expect_raises):</span>
 <span id="cb10-20"><a href="#cb10-20" tabindex="-1"></a>    <span class="co">"""Test normalisation works for arrays of one and positive integers."""</span></span>
-<span id="cb10-21"><a href="#cb10-21" tabindex="-1"></a>        </span>
+<span id="cb10-21"><a href="#cb10-21" tabindex="-1"></a></span>
 <span id="cb10-22"><a href="#cb10-22" tabindex="-1"></a>    <span class="cf">if</span> expect_raises <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>:</span>
 <span id="cb10-23"><a href="#cb10-23" tabindex="-1"></a>        <span class="cf">with</span> pytest.raises(expect_raises):</span>
 <span id="cb10-24"><a href="#cb10-24" tabindex="-1"></a>            patient_normalise(np.array(test))</span>
@@ -1479,21 +1479,29 @@ and limitations of your code for users of your code in the docstring and
 rely on them to invoke your code correctly. This approach is useful when
 explicitly checking the precondition is too costly.</p>
 </section><section><h2 class="section-heading" id="improving-robustness-with-automated-code-style-checks">Improving Robustness with Automated Code Style Checks<a class="anchor" aria-label="anchor" href="#improving-robustness-with-automated-code-style-checks"></a></h2>
-<hr class="half-width"><p>Let us re-run Pylint over our project after having added some more
-code to it. From the project root do:</p>
+<hr class="half-width"><p>Let us re-run Ruff over our project after having added some more code
+to it. From the project root do:</p>
 <div class="codewrapper sourceCode" id="cb15">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a><span class="ex">$</span> pylint inflammation</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a><span class="ex">$</span> ruff check inflammation</span></code></pre>
 </div>
-<p>You may see something like the following in Pylint’s output:</p>
+<p>You may see something like the following in Ruff’s output:</p>
 <div class="codewrapper sourceCode" id="cb16">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="ex">*************</span> Module inflammation.models</span>
-<span id="cb16-2"><a href="#cb16-2" tabindex="-1"></a><span class="ex">...</span></span>
-<span id="cb16-3"><a href="#cb16-3" tabindex="-1"></a><span class="ex">inflammation/models.py:60:4:</span> W0622: Redefining built-in <span class="st">'max'</span> <span class="er">(</span><span class="ex">redefined-builtin</span><span class="kw">)</span></span>
-<span id="cb16-4"><a href="#cb16-4" tabindex="-1"></a><span class="ex">...</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="ex">A001</span> Variable <span class="kw">`</span><span class="ex">max</span><span class="kw">`</span> is shadowing a Python builtin</span>
+<span id="cb16-2"><a href="#cb16-2" tabindex="-1"></a>  <span class="ex">--</span><span class="op">&gt;</span> inflammation/models.py:60:5</span>
+<span id="cb16-3"><a href="#cb16-3" tabindex="-1"></a>   <span class="kw">|</span></span>
+<span id="cb16-4"><a href="#cb16-4" tabindex="-1"></a><span class="ex">58</span> <span class="kw">|</span>     <span class="cf">if</span> <span class="ex">np.any</span><span class="er">(</span><span class="ex">data</span> <span class="op">&lt;</span> 0<span class="kw">)</span><span class="bu">:</span></span>
+<span id="cb16-5"><a href="#cb16-5" tabindex="-1"></a><span class="ex">59</span> <span class="kw">|</span>         <span class="ex">raise</span> ValueError<span class="er">(</span><span class="st">'inflammation values should be non-negative'</span><span class="kw">)</span></span>
+<span id="cb16-6"><a href="#cb16-6" tabindex="-1"></a><span class="ex">60</span> <span class="kw">|</span>     <span class="ex">max</span> = np.nanmax<span class="er">(</span><span class="ex">data,</span> axis=1<span class="kw">)</span></span>
+<span id="cb16-7"><a href="#cb16-7" tabindex="-1"></a>   <span class="kw">|</span>     <span class="ex">^^^</span></span>
+<span id="cb16-8"><a href="#cb16-8" tabindex="-1"></a><span class="ex">61</span> <span class="kw">|</span>     <span class="ex">with</span> np.errstate<span class="er">(</span><span class="va">invalid</span><span class="op">=</span><span class="st">'ignore'</span>, <span class="va">divide</span><span class="op">=</span><span class="st">'ignore'</span><span class="kw">)</span><span class="bu">:</span></span>
+<span id="cb16-9"><a href="#cb16-9" tabindex="-1"></a><span class="ex">62</span> <span class="kw">|</span>         <span class="ex">normalised</span> = data / max[:, np.newaxis]</span>
+<span id="cb16-10"><a href="#cb16-10" tabindex="-1"></a>   <span class="kw">|</span></span>
+<span id="cb16-11"><a href="#cb16-11" tabindex="-1"></a></span>
+<span id="cb16-12"><a href="#cb16-12" tabindex="-1"></a><span class="ex">Found</span> 1 error.</span></code></pre>
 </div>
 <p>The above output indicates that by using the local variable called
 <code>max</code> in the <code>patient_normalise</code> function, we have
@@ -1517,74 +1525,59 @@ branch workflow.</p>
 </div>
 </div>
 <p>It may be hard to remember to run linter tools every now and then.
-Luckily, we can now add this Pylint execution to our continuous
-integration builds as one of the extra tasks. To add Pylint to our CI
+Luckily, we can now add this Ruff execution to our continuous
+integration builds as one of the extra tasks. To add Ruff to our CI
 workflow, we can add the following step to our <code>steps</code> in
 <code>.github/workflows/main.yml</code>:</p>
 <div class="codewrapper sourceCode" id="cb17">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a><span class="ex">...</span></span>
-<span id="cb17-2"><a href="#cb17-2" tabindex="-1"></a>    <span class="ex">-</span> name: Check style with Pylint</span>
+<span id="cb17-2"><a href="#cb17-2" tabindex="-1"></a>    <span class="ex">-</span> name: Check style with Ruff</span>
 <span id="cb17-3"><a href="#cb17-3" tabindex="-1"></a>      <span class="ex">run:</span> <span class="kw">|</span></span>
-<span id="cb17-4"><a href="#cb17-4" tabindex="-1"></a>        <span class="ex">python3</span> <span class="at">-m</span> pylint <span class="at">--fail-under</span><span class="op">=</span>0 <span class="at">--reports</span><span class="op">=</span>y inflammation</span>
+<span id="cb17-4"><a href="#cb17-4" tabindex="-1"></a>        <span class="ex">python3</span> <span class="at">-m</span> ruff check <span class="at">--exit-zero</span> <span class="at">--output-format</span><span class="op">=</span>github inflammation</span>
 <span id="cb17-5"><a href="#cb17-5" tabindex="-1"></a><span class="ex">...</span></span></code></pre>
 </div>
-<p>Note we need to add <code>--fail-under=0</code> otherwise the builds
-will fail if we do not get a ‘perfect’ score of 10! This seems unlikely,
-so let us be more pessimistic. We have also added
-<code>--reports=y</code> which will give us a more detailed report of
-the code analysis.</p>
+<p>Note we need to add <code>--exit-zero</code> otherwise the builds
+will fail if our codebase breaks any of the rule! We have also added
+<code>--output-format=github</code> to format the output so that it can
+more easily be visualized as part of the GitHub action logs.</p>
 <p>Then we can just add this to our repo and trigger a build:</p>
 <div class="codewrapper sourceCode" id="cb18">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a><span class="ex">$</span> git add .github/workflows/main.yml</span>
-<span id="cb18-2"><a href="#cb18-2" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"Add Pylint run to build"</span></span>
+<span id="cb18-2"><a href="#cb18-2" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"Add Ruff run to build"</span></span>
 <span id="cb18-3"><a href="#cb18-3" tabindex="-1"></a><span class="ex">$</span> git push origin test-suite</span></code></pre>
 </div>
 <p>Then once complete, under the build(s) reports you should see an
-entry with the output from Pylint as before, but with an extended
-breakdown of the infractions by category as well as other metrics for
-the code, such as the number and line percentages of code, docstrings,
-comments, and empty lines.</p>
-<p>So we specified a score of 0 as a minimum which is very low. If we
-decide as a team on a suitable minimum score for our codebase, we can
-specify this instead. There are also ways to specify specific style
-rules that shouldn’t be broken which will cause Pylint to fail, which
-could be even more useful if we want to mandate a consistent style.</p>
-<p>We can specify overrides to Pylint’s rules in a file called
-<code>.pylintrc</code> which Pylint can helpfully generate for us. In
-our repository root directory:</p>
+entry with the output from Ruff as before, but with a more concise
+format.</p>
+<p>We specified <code>--exit-zero</code> so that the builds will not
+fail even if some of the linting rules are not followed. If we decide as
+a team on a set of rules to be followed for our codebase, we can remove
+this option. With the agreed upon style rules that shouldn’t be broken
+specified in the <code>pyproject.toml</code> file, which will cause Ruff
+to fail, we can use the action to mandate a consistent style.</p>
+<p>We can also specify overrides to Ruff’s rules in the
+<code>pyproject.toml</code> file. For instance, we can ignore particular
+rules to suit our team’s coding style. For example, a typical rule to
+customise - favoured by many projects - is the one involving line
+length. The default maximum line length as indicated by the <a href="https://peps.python.org/pep-0008/#maximum-line-length" class="external-link">Python
+PEP-8 coding conventions</a> is 79 characters, so let us set that to a
+more reasonable 120:</p>
 <div class="codewrapper sourceCode" id="cb19">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" tabindex="-1"></a><span class="ex">$</span> pylint <span class="at">--generate-rcfile</span> <span class="op">&gt;</span> .pylintrc</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" tabindex="-1"></a><span class="ex">...</span></span>
+<span id="cb19-2"><a href="#cb19-2" tabindex="-1"></a><span class="ex">[tool.ruff]</span></span>
+<span id="cb19-3"><a href="#cb19-3" tabindex="-1"></a><span class="ex">line-length</span> = 120</span>
+<span id="cb19-4"><a href="#cb19-4" tabindex="-1"></a><span class="ex">...</span></span></code></pre>
 </div>
-<p>Looking at this file, you’ll see it is already pre-populated. No
-behaviour is currently changed from the default by generating this file,
-but we can amend it to suit our team’s coding style. For example, a
-typical rule to customise - favoured by many projects - is the one
-involving line length. You’ll see it is set to 100, so let us set that
-to a more reasonable 120. While we are at it, let us also set our
-<code>fail-under</code> in this file:</p>
-<div class="codewrapper sourceCode" id="cb20">
-<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" tabindex="-1"></a><span class="ex">...</span></span>
-<span id="cb20-2"><a href="#cb20-2" tabindex="-1"></a><span class="co"># Specify a score threshold to be exceeded before program exits with error.</span></span>
-<span id="cb20-3"><a href="#cb20-3" tabindex="-1"></a><span class="ex">fail-under=0</span></span>
-<span id="cb20-4"><a href="#cb20-4" tabindex="-1"></a><span class="ex">...</span></span>
-<span id="cb20-5"><a href="#cb20-5" tabindex="-1"></a><span class="co"># Maximum number of characters on a single line.</span></span>
-<span id="cb20-6"><a href="#cb20-6" tabindex="-1"></a><span class="ex">max-line-length=120</span></span>
-<span id="cb20-7"><a href="#cb20-7" tabindex="-1"></a><span class="ex">...</span></span></code></pre>
-</div>
-<p>do not forget to remove the <code>--fail-under</code> argument to
-Pytest in our GitHub Actions configuration file too, since we do not
-need it anymore.</p>
-<p>Now when we run Pylint we will not be penalised for having a
-reasonable line length. For some further hints and tips on how to
-approach using Pylint for a project, see <a href="https://pythonspeed.com/articles/pylint/" class="external-link">this article</a>.</p>
+<p>Now when we run Ruff we will not be penalised for having a reasonable
+line length. For some further customization of Ruff for your project,
+see the <a href="https://docs.astral.sh/ruff/linter/" class="external-link">Ruff Linter
+documentation</a>.</p>
 </section><section><h2 class="section-heading" id="merging-to-develop-branch">Merging to <code>develop</code> Branch<a class="anchor" aria-label="anchor" href="#merging-to-develop-branch"></a></h2>
 <hr class="half-width"><p>Now we are happy with our test suite, we can merge this work (which
 currently only exist on our <code>test-suite</code> branch) with our
@@ -1594,18 +1587,18 @@ separate feature branch until it is ready to be escalated to the
 <code>develop</code> branch.</p>
 <p>Be sure to commit all your changes to <code>test-suite</code> and
 then merge to the <code>develop</code> branch in the usual manner.</p>
-<div class="codewrapper sourceCode" id="cb21">
+<div class="codewrapper sourceCode" id="cb20">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" tabindex="-1"></a><span class="ex">$</span> git switch develop</span>
-<span id="cb21-2"><a href="#cb21-2" tabindex="-1"></a><span class="ex">$</span> git merge test-suite</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" tabindex="-1"></a><span class="ex">$</span> git switch develop</span>
+<span id="cb20-2"><a href="#cb20-2" tabindex="-1"></a><span class="ex">$</span> git merge test-suite</span></code></pre>
 </div>
 <p>Then, assuming there are no conflicts, we can push these changes back
 to the remote repository as we have done before:</p>
-<div class="codewrapper sourceCode" id="cb22">
+<div class="codewrapper sourceCode" id="cb21">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" tabindex="-1"></a><span class="ex">$</span> git push origin develop</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" tabindex="-1"></a><span class="ex">$</span> git push origin develop</span></code></pre>
 </div>
 <p>Now these changes have migrated to our parent <code>develop</code>
 branch, <code>develop</code> will also inherit the configuration to run
@@ -1698,8 +1691,8 @@ robustness.</li>
   "url": "https://carpentries-incubator.github.io/python-intermediate-development/instructor/24-diagnosing-issues-improving-robustness.html",
   "identifier": "https://carpentries-incubator.github.io/python-intermediate-development/instructor/24-diagnosing-issues-improving-robustness.html",
   "dateCreated": "2020-04-23",
-  "dateModified": "2025-10-20",
-  "datePublished": "2025-10-23"
+  "dateModified": "2025-10-24",
+  "datePublished": "2025-10-24"
 }
 
   </script><script>
