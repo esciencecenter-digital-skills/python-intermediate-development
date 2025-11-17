@@ -440,7 +440,7 @@
 <div class="accordion accordion-flush" id="accordionFlush26">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading26">
-        <a href="42-software-reuse.html">4.2 Preparing Software for Reuse and Release</a>
+        <a href="42-software-reuse.html">4.2 Preparing Software for Reuse</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -449,7 +449,7 @@
 <div class="accordion accordion-flush" id="accordionFlush27">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading27">
-        <a href="43-software-release.html">4.3 Packaging Code for Release and Distribution</a>
+        <a href="43-software-release.html">4.3 Software Packaging and Release</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -558,7 +558,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>4.1 Developing Software In a Team: Code Review</h1>
-        <p>Last updated on 2025-06-25 |
+        <p>Last updated on 2025-11-17 |
 
         <a href="https://github.com/carpentries-incubator/python-intermediate-development/edit/main/episodes/41-code-review.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -981,7 +981,7 @@ yet.</strong></p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>Here are some of the things you might have found were wrong with the
 code.</p>
@@ -1085,7 +1085,7 @@ your comments.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>Your list might include the following:</p>
 <ol style="list-style-type: decimal"><li>Standard deviation for one patient with multiple observations.</li>
@@ -1168,7 +1168,46 @@ team. In our case, you will merge the changes on the PR on your
 repository. <img src="../fig/github-merge-pull-request.png" class="image-with-shadow figure" alt="Merging a pull request in GitHub" width="800"></li>
 <li>Delete the merged branch to reduce the clutter in the
 repository.</li>
-</ol></div>
+</ol><div id="merge-via-command-line" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div id="merge-via-command-line" class="callout-inner">
+<h3 class="callout-title">Merge via command line</h3>
+<div class="callout-content">
+<p>The <code>git merge</code> command provides a way to directly merge
+branches on your local. In general, when adding changes to the major
+branches like <code>develop</code> or <code>main</code>, this is not a
+good practice since it bypasses the code review process. It is a common
+practice for an open-source project to protect its most important
+branches, meaning pushing directly to one of these branches will fail.
+Therefore, even if you can merge to <code>develop</code> or
+<code>main</code> locally, you will not be able to push the changes to
+the remote repository.</p>
+<p>On the other hand, the <code>git merge</code> command can be very
+useful for keeping your feature branch up to date with the major
+branches. For example, if you are working on a branch
+<code>my-feature</code> and the <code>develop</code> branch has received
+new commits (e.g. someone else has merged their pull request), you can
+do the following to include changes from <code>develop</code> into your
+feature branch:</p>
+<div class="codewrapper sourceCode" id="cb2">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="co"># First update your local develop branch</span></span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="ex">$</span> git checkout develop</span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a><span class="ex">$</span> git pull develop</span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a><span class="co"># Then switch back to your feature branch and merge the latest develop into it</span></span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a><span class="ex">$</span> git checkout my-feature</span>
+<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a><span class="ex">$</span> git merge develop</span></code></pre>
+</div>
+<p>In this way, you can keep your feature branch up to date. You may
+need to resolve conflicts that arise during this process.</p>
+</div>
+</div>
+</div>
+</div>
 </section><section><h2 class="section-heading" id="writing-easy-to-review-code">Writing Easy-To-Review Code<a class="anchor" aria-label="anchor" href="#writing-easy-to-review-code"></a></h2>
 <hr class="half-width"><p>There are a few things you can do to make it as easy as possible for
 the reviewer to review your code:</p>
@@ -1285,7 +1324,7 @@ environment.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <p>The purposes of code review include:</p>
 <ul><li>improving internal code readability, understandability, quality and
@@ -1398,8 +1437,8 @@ maintainable code for many years.</li>
   "url": "https://carpentries-incubator.github.io/python-intermediate-development/instructor/41-code-review.html",
   "identifier": "https://carpentries-incubator.github.io/python-intermediate-development/instructor/41-code-review.html",
   "dateCreated": "2020-04-23",
-  "dateModified": "2025-06-25",
-  "datePublished": "2025-11-11"
+  "dateModified": "2025-11-17",
+  "datePublished": "2025-11-17"
 }
 
   </script><script>
