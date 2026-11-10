@@ -190,21 +190,21 @@ jobs:
     # Next we need to checkout out repository, and set up Python
     # A 'name' is just an optional label shown in the log - helpful to clarify progress - and can be anything
     - name: Checkout repository
-      uses: actions/checkout@v4
+      uses: actions/checkout@v7
 
-    - name: Set up Python 3.11
-      uses: actions/setup-python@v5
+    - name: Set up Python 3.14
+      uses: actions/setup-python@v7
       with:
-        python-version: "3.11"
+        python-version: "3.14"
 
     - name: Install Python dependencies
       run: |
-        python3 -m pip install --upgrade pip
-        python3 -m pip install -r requirements.txt .
+        python -m pip install --upgrade pip
+        python -m pip install -r requirements.txt .
 
     - name: Test with PyTest
       run: |
-        python3 -m pytest --cov=inflammation.models tests/test_models.py
+        python -m pytest --cov=inflammation.models tests/test_models.py
 ```
 
 ***Note**: be sure to create this file as `main.yml`
@@ -232,7 +232,7 @@ Each of these steps are:
 - **Checkout repository for the job:**
   `uses` indicates that want to use a GitHub Action called `checkout` that does this
 - **Set up Python version:**
-  here we use the `setup-python` Action, indicating that we want Python version 3.11.
+  here we use the `setup-python` Action, indicating that we want Python version 3.14.
   Note we specify the version within quotes,
   to ensure that this is interpreted as a complete string.
   Otherwise, if we wanted to test against for example Python 3.10,
@@ -246,7 +246,7 @@ Each of these steps are:
   then we use pip to install our package dependencies.
   Notice that it is fine to omit the `--editable` flag in this case because the source code will be static and therefore we don't need this to be an "editable" install like when we are developing locally.
   We use `run` here to run theses commands in the CI shell environment
-- **Test with PyTest:** lastly, we run `python3 -m pytest`,
+- **Test with PyTest:** lastly, we run `python -m pytest`,
   with the same arguments we used manually before
 
 :::::::::::::::::::::::::::::::::::::::::  callout
@@ -332,7 +332,7 @@ we can use a feature called **build matrices**
 which really shows the value of using CI to test at scale.
 
 Suppose the intended users of our software use either Ubuntu, Mac OS, or Windows,
-and have Python versions 3.10 through 3.12 installed,
+and have Python versions 3.12 through 3.14 installed,
 and we want to support all of these.
 Assuming we have a suitable test suite,
 it would take a considerable amount of time to set up testing platforms
@@ -363,7 +363,7 @@ jobs:
     strategy:
       matrix:
         os: ["ubuntu-latest", "macos-latest", "windows-latest"]
-        python-version: ["3.10", "3.11", "3.12"]
+        python-version: ["3.12", "3.13", "3.14"]
 
     # Here we add the reference to the os matrix values
     runs-on: ${{ matrix.os }}
@@ -372,26 +372,26 @@ jobs:
     steps:
 
     - name: Checkout repository
-      uses: actions/checkout@v4
+      uses: actions/checkout@v7
 
     - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v5
+      uses: actions/setup-python@v7
       with:
         # Here we add the reference to the python-version matrix values
         python-version: ${{ matrix.python-version }}
     # Same steps as in "Defining Our Workflow" section
     - name: Install Python dependencies
       run: |
-        python3 -m pip install --upgrade pip
-        python3 -m pip install -r requirements.txt .
+        python -m pip install --upgrade pip
+        python -m pip install -r requirements.txt .
     - name: Test with PyTest
       run: |
-        python3 -m pytest --cov=inflammation.models tests/test_models.py
+        python -m pytest --cov=inflammation.models tests/test_models.py
 ```
 
 The `{{ }}` are used
 as a means to reference configuration values from the matrix.
-This way, every possible permutation of Python versions 3.10 through 3.12
+This way, every possible permutation of Python versions 3.12 through 3.14
 with the latest versions of Ubuntu, Mac OS and Windows operating systems
 will be tested, and we can expect 9 build jobs in total.
 We can also use this in the `name` key of the step to accurately reflect what it is doing
