@@ -570,7 +570,7 @@
       </div>
     </nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>2.3 Continuous Integration for Automated Testing</h1>
-        <p>Last updated on 2025-06-19 |
+        <p>Last updated on 2026-11-10 |
 
         <a href="https://github.com/carpentries-incubator/python-intermediate-development/edit/main/episodes/23-continuous-integration-automated-testing.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -776,21 +776,21 @@ file called <code>main.yml</code> (note its extension is
 <span id="cb8-17"><a href="#cb8-17" tabindex="-1" aria-label="code-block-8-17"></a><span class="co">    # Next we need to checkout out repository, and set up Python</span></span>
 <span id="cb8-18"><a href="#cb8-18" tabindex="-1" aria-label="code-block-8-18"></a><span class="co">    # A 'name' is just an optional label shown in the log - helpful to clarify progress - and can be anything</span></span>
 <span id="cb8-19"><a href="#cb8-19" tabindex="-1" aria-label="code-block-8-19"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Checkout repository</span></span>
-<span id="cb8-20"><a href="#cb8-20" tabindex="-1" aria-label="code-block-8-20"></a><span class="at">      </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/checkout@v4</span></span>
+<span id="cb8-20"><a href="#cb8-20" tabindex="-1" aria-label="code-block-8-20"></a><span class="at">      </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/checkout@v7</span></span>
 <span id="cb8-21"><a href="#cb8-21" tabindex="-1" aria-label="code-block-8-21"></a></span>
-<span id="cb8-22"><a href="#cb8-22" tabindex="-1" aria-label="code-block-8-22"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Set up Python 3.11</span></span>
-<span id="cb8-23"><a href="#cb8-23" tabindex="-1" aria-label="code-block-8-23"></a><span class="at">      </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/setup-python@v5</span></span>
+<span id="cb8-22"><a href="#cb8-22" tabindex="-1" aria-label="code-block-8-22"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Set up Python 3.14</span></span>
+<span id="cb8-23"><a href="#cb8-23" tabindex="-1" aria-label="code-block-8-23"></a><span class="at">      </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/setup-python@v7</span></span>
 <span id="cb8-24"><a href="#cb8-24" tabindex="-1" aria-label="code-block-8-24"></a><span class="at">      </span><span class="fu">with</span><span class="kw">:</span></span>
-<span id="cb8-25"><a href="#cb8-25" tabindex="-1" aria-label="code-block-8-25"></a><span class="at">        </span><span class="fu">python-version</span><span class="kw">:</span><span class="at"> </span><span class="st">"3.11"</span></span>
+<span id="cb8-25"><a href="#cb8-25" tabindex="-1" aria-label="code-block-8-25"></a><span class="at">        </span><span class="fu">python-version</span><span class="kw">:</span><span class="at"> </span><span class="st">"3.14"</span></span>
 <span id="cb8-26"><a href="#cb8-26" tabindex="-1" aria-label="code-block-8-26"></a></span>
 <span id="cb8-27"><a href="#cb8-27" tabindex="-1" aria-label="code-block-8-27"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Install Python dependencies</span></span>
 <span id="cb8-28"><a href="#cb8-28" tabindex="-1" aria-label="code-block-8-28"></a><span class="fu">      run</span><span class="kw">: </span><span class="ch">|</span></span>
-<span id="cb8-29"><a href="#cb8-29" tabindex="-1" aria-label="code-block-8-29"></a>        python3 -m pip install --upgrade pip</span>
-<span id="cb8-30"><a href="#cb8-30" tabindex="-1" aria-label="code-block-8-30"></a>        python3 -m pip install -r requirements.txt .</span>
+<span id="cb8-29"><a href="#cb8-29" tabindex="-1" aria-label="code-block-8-29"></a>        python -m pip install --upgrade pip</span>
+<span id="cb8-30"><a href="#cb8-30" tabindex="-1" aria-label="code-block-8-30"></a>        python -m pip install -r requirements.txt .</span>
 <span id="cb8-31"><a href="#cb8-31" tabindex="-1" aria-label="code-block-8-31"></a></span>
 <span id="cb8-32"><a href="#cb8-32" tabindex="-1" aria-label="code-block-8-32"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Test with PyTest</span></span>
 <span id="cb8-33"><a href="#cb8-33" tabindex="-1" aria-label="code-block-8-33"></a><span class="fu">      run</span><span class="kw">: </span><span class="ch">|</span></span>
-<span id="cb8-34"><a href="#cb8-34" tabindex="-1" aria-label="code-block-8-34"></a>        python3 -m pytest --cov=inflammation.models tests/test_models.py</span></code></pre>
+<span id="cb8-34"><a href="#cb8-34" tabindex="-1" aria-label="code-block-8-34"></a>        python -m pytest --cov=inflammation.models tests/test_models.py</span></code></pre>
 </div>
 <p><em><strong>Note</strong>: be sure to create this file as
 <code>main.yml</code> within the newly created
@@ -818,7 +818,7 @@ that does this</li>
 <li>
 <strong>Set up Python version:</strong> here we use the
 <code>setup-python</code> Action, indicating that we want Python version
-3.11. Note we specify the version within quotes, to ensure that this is
+3.14. Note we specify the version within quotes, to ensure that this is
 interpreted as a complete string. Otherwise, if we wanted to test
 against for example Python 3.10, by specifying <code>3.10</code> without
 the quotes, it would be interpreted as the number <code>3.1</code> which
@@ -836,7 +836,7 @@ like when we are developing locally. We use <code>run</code> here to run
 theses commands in the CI shell environment</li>
 <li>
 <strong>Test with PyTest:</strong> lastly, we run
-<code>python3 -m pytest</code>, with the same arguments we used manually
+<code>python -m pytest</code>, with the same arguments we used manually
 before</li>
 </ul><div id="what-about-other-actions" class="callout">
 <div class="callout-square">
@@ -912,7 +912,7 @@ levels are available too.</p>
 called <strong>build matrices</strong> which really shows the value of
 using CI to test at scale.</p>
 <p>Suppose the intended users of our software use either Ubuntu, Mac OS,
-or Windows, and have Python versions 3.10 through 3.12 installed, and we
+or Windows, and have Python versions 3.12 through 3.14 installed, and we
 want to support all of these. Assuming we have a suitable test suite, it
 would take a considerable amount of time to set up testing platforms to
 run our tests across all these platform combinations. Fortunately, CI
@@ -942,7 +942,7 @@ the following:</p>
 <span id="cb10-8"><a href="#cb10-8" tabindex="-1" aria-label="code-block-10-8"></a><span class="at">    </span><span class="fu">strategy</span><span class="kw">:</span></span>
 <span id="cb10-9"><a href="#cb10-9" tabindex="-1" aria-label="code-block-10-9"></a><span class="at">      </span><span class="fu">matrix</span><span class="kw">:</span></span>
 <span id="cb10-10"><a href="#cb10-10" tabindex="-1" aria-label="code-block-10-10"></a><span class="at">        </span><span class="fu">os</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="st">"ubuntu-latest"</span><span class="kw">,</span><span class="at"> </span><span class="st">"macos-latest"</span><span class="kw">,</span><span class="at"> </span><span class="st">"windows-latest"</span><span class="kw">]</span></span>
-<span id="cb10-11"><a href="#cb10-11" tabindex="-1" aria-label="code-block-10-11"></a><span class="at">        </span><span class="fu">python-version</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="st">"3.10"</span><span class="kw">,</span><span class="at"> </span><span class="st">"3.11"</span><span class="kw">,</span><span class="at"> </span><span class="st">"3.12"</span><span class="kw">]</span></span>
+<span id="cb10-11"><a href="#cb10-11" tabindex="-1" aria-label="code-block-10-11"></a><span class="at">        </span><span class="fu">python-version</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="st">"3.12"</span><span class="kw">,</span><span class="at"> </span><span class="st">"3.13"</span><span class="kw">,</span><span class="at"> </span><span class="st">"3.14"</span><span class="kw">]</span></span>
 <span id="cb10-12"><a href="#cb10-12" tabindex="-1" aria-label="code-block-10-12"></a></span>
 <span id="cb10-13"><a href="#cb10-13" tabindex="-1" aria-label="code-block-10-13"></a><span class="co">    # Here we add the reference to the os matrix values</span></span>
 <span id="cb10-14"><a href="#cb10-14" tabindex="-1" aria-label="code-block-10-14"></a><span class="at">    </span><span class="fu">runs-on</span><span class="kw">:</span><span class="at"> ${{ matrix.os }}</span></span>
@@ -951,25 +951,25 @@ the following:</p>
 <span id="cb10-17"><a href="#cb10-17" tabindex="-1" aria-label="code-block-10-17"></a><span class="at">    </span><span class="fu">steps</span><span class="kw">:</span></span>
 <span id="cb10-18"><a href="#cb10-18" tabindex="-1" aria-label="code-block-10-18"></a></span>
 <span id="cb10-19"><a href="#cb10-19" tabindex="-1" aria-label="code-block-10-19"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Checkout repository</span></span>
-<span id="cb10-20"><a href="#cb10-20" tabindex="-1" aria-label="code-block-10-20"></a><span class="at">      </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/checkout@v4</span></span>
+<span id="cb10-20"><a href="#cb10-20" tabindex="-1" aria-label="code-block-10-20"></a><span class="at">      </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/checkout@v7</span></span>
 <span id="cb10-21"><a href="#cb10-21" tabindex="-1" aria-label="code-block-10-21"></a></span>
 <span id="cb10-22"><a href="#cb10-22" tabindex="-1" aria-label="code-block-10-22"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Set up Python ${{ matrix.python-version }}</span></span>
-<span id="cb10-23"><a href="#cb10-23" tabindex="-1" aria-label="code-block-10-23"></a><span class="at">      </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/setup-python@v5</span></span>
+<span id="cb10-23"><a href="#cb10-23" tabindex="-1" aria-label="code-block-10-23"></a><span class="at">      </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/setup-python@v7</span></span>
 <span id="cb10-24"><a href="#cb10-24" tabindex="-1" aria-label="code-block-10-24"></a><span class="at">      </span><span class="fu">with</span><span class="kw">:</span></span>
 <span id="cb10-25"><a href="#cb10-25" tabindex="-1" aria-label="code-block-10-25"></a><span class="co">        # Here we add the reference to the python-version matrix values</span></span>
 <span id="cb10-26"><a href="#cb10-26" tabindex="-1" aria-label="code-block-10-26"></a><span class="at">        </span><span class="fu">python-version</span><span class="kw">:</span><span class="at"> ${{ matrix.python-version }}</span></span>
 <span id="cb10-27"><a href="#cb10-27" tabindex="-1" aria-label="code-block-10-27"></a><span class="co">    # Same steps as in "Defining Our Workflow" section</span></span>
 <span id="cb10-28"><a href="#cb10-28" tabindex="-1" aria-label="code-block-10-28"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Install Python dependencies</span></span>
 <span id="cb10-29"><a href="#cb10-29" tabindex="-1" aria-label="code-block-10-29"></a><span class="fu">      run</span><span class="kw">: </span><span class="ch">|</span></span>
-<span id="cb10-30"><a href="#cb10-30" tabindex="-1" aria-label="code-block-10-30"></a>        python3 -m pip install --upgrade pip</span>
-<span id="cb10-31"><a href="#cb10-31" tabindex="-1" aria-label="code-block-10-31"></a>        python3 -m pip install -r requirements.txt .</span>
+<span id="cb10-30"><a href="#cb10-30" tabindex="-1" aria-label="code-block-10-30"></a>        python -m pip install --upgrade pip</span>
+<span id="cb10-31"><a href="#cb10-31" tabindex="-1" aria-label="code-block-10-31"></a>        python -m pip install -r requirements.txt .</span>
 <span id="cb10-32"><a href="#cb10-32" tabindex="-1" aria-label="code-block-10-32"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Test with PyTest</span></span>
 <span id="cb10-33"><a href="#cb10-33" tabindex="-1" aria-label="code-block-10-33"></a><span class="fu">      run</span><span class="kw">: </span><span class="ch">|</span></span>
-<span id="cb10-34"><a href="#cb10-34" tabindex="-1" aria-label="code-block-10-34"></a>        python3 -m pytest --cov=inflammation.models tests/test_models.py</span></code></pre>
+<span id="cb10-34"><a href="#cb10-34" tabindex="-1" aria-label="code-block-10-34"></a>        python -m pytest --cov=inflammation.models tests/test_models.py</span></code></pre>
 </div>
 <p>The <code>{{ }}</code> are used as a means to reference configuration
 values from the matrix. This way, every possible permutation of Python
-versions 3.10 through 3.12 with the latest versions of Ubuntu, Mac OS
+versions 3.12 through 3.14 with the latest versions of Ubuntu, Mac OS
 and Windows operating systems will be tested, and we can expect 9 build
 jobs in total. We can also use this in the <code>name</code> key of the
 step to accurately reflect what it is doing (e.g. which Python version
@@ -1104,7 +1104,7 @@ builds simultaneously.</li>
   "url": "https://carpentries-incubator.github.io/python-intermediate-development/23-continuous-integration-automated-testing.html",
   "identifier": "https://carpentries-incubator.github.io/python-intermediate-development/23-continuous-integration-automated-testing.html",
   "dateCreated": "2020-04-23",
-  "dateModified": "2025-06-19",
+  "dateModified": "2026-11-10",
   "datePublished": "2026-11-10"
 }
 
